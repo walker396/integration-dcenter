@@ -1,0 +1,221 @@
+{
+  "format-version" : 2,
+  "table-uuid" : "3c1cb189-b443-4de9-af56-85085a4ccd2f",
+  "location" : "src/main/resources/warehouse/catalog/demo/orders",
+  "last-sequence-number" : 4,
+  "last-updated-ms" : 1733023399425,
+  "last-column-id" : 11,
+  "current-schema-id" : 0,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "order_id",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 2,
+      "name" : "user_id",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "product_id",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 4,
+      "name" : "product_name",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 5,
+      "name" : "category",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 6,
+      "name" : "price",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 7,
+      "name" : "quantity",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 8,
+      "name" : "order_date",
+      "required" : false,
+      "type" : "date"
+    }, {
+      "id" : 9,
+      "name" : "order_status",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 10,
+      "name" : "delivery_date",
+      "required" : false,
+      "type" : "date"
+    }, {
+      "id" : 11,
+      "name" : "updated_time",
+      "required" : false,
+      "type" : "timestamptz"
+    } ]
+  } ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ {
+      "name" : "category",
+      "transform" : "identity",
+      "source-id" : 5,
+      "field-id" : 1000
+    } ]
+  } ],
+  "last-partition-id" : 1000,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "owner" : "jonny",
+    "write.parquet.compression-codec" : "zstd",
+    "write.upsert.enabled" : "true"
+  },
+  "current-snapshot-id" : 5910391196304167170,
+  "refs" : {
+    "main" : {
+      "snapshot-id" : 5910391196304167170,
+      "type" : "branch"
+    }
+  },
+  "snapshots" : [ {
+    "sequence-number" : 1,
+    "snapshot-id" : 7375686592954999898,
+    "timestamp-ms" : 1733023386745,
+    "summary" : {
+      "operation" : "overwrite",
+      "spark.app.id" : "local-1733023342014",
+      "replace-partitions" : "true",
+      "added-data-files" : "1",
+      "added-records" : "2",
+      "added-files-size" : "3252",
+      "changed-partition-count" : "1",
+      "total-records" : "2",
+      "total-files-size" : "3252",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "src/main/resources/warehouse/catalog/demo/orders/metadata/snap-7375686592954999898-1-15b82152-9551-414c-801f-95de69d9e208.avro",
+    "schema-id" : 0
+  }, {
+    "sequence-number" : 2,
+    "snapshot-id" : 7687205726848296518,
+    "parent-snapshot-id" : 7375686592954999898,
+    "timestamp-ms" : 1733023392171,
+    "summary" : {
+      "operation" : "overwrite",
+      "spark.app.id" : "local-1733023342014",
+      "replace-partitions" : "true",
+      "added-data-files" : "1",
+      "deleted-data-files" : "1",
+      "added-records" : "1",
+      "deleted-records" : "2",
+      "added-files-size" : "3171",
+      "removed-files-size" : "3252",
+      "changed-partition-count" : "1",
+      "total-records" : "1",
+      "total-files-size" : "3171",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "src/main/resources/warehouse/catalog/demo/orders/metadata/snap-7687205726848296518-1-11f293f5-4b36-4bf4-81d6-69b6d3a352f9.avro",
+    "schema-id" : 0
+  }, {
+    "sequence-number" : 3,
+    "snapshot-id" : 1559260870369604717,
+    "parent-snapshot-id" : 7687205726848296518,
+    "timestamp-ms" : 1733023394903,
+    "summary" : {
+      "operation" : "overwrite",
+      "spark.app.id" : "local-1733023342014",
+      "replace-partitions" : "true",
+      "added-data-files" : "1",
+      "deleted-data-files" : "1",
+      "added-records" : "1",
+      "deleted-records" : "1",
+      "added-files-size" : "3186",
+      "removed-files-size" : "3171",
+      "changed-partition-count" : "1",
+      "total-records" : "1",
+      "total-files-size" : "3186",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "src/main/resources/warehouse/catalog/demo/orders/metadata/snap-1559260870369604717-1-7e66a37d-99d7-4bce-bff4-ac82dd9a4eae.avro",
+    "schema-id" : 0
+  }, {
+    "sequence-number" : 4,
+    "snapshot-id" : 5910391196304167170,
+    "parent-snapshot-id" : 1559260870369604717,
+    "timestamp-ms" : 1733023399425,
+    "summary" : {
+      "operation" : "overwrite",
+      "spark.app.id" : "local-1733023342014",
+      "replace-partitions" : "true",
+      "added-data-files" : "1",
+      "deleted-data-files" : "1",
+      "added-records" : "2",
+      "deleted-records" : "1",
+      "added-files-size" : "3373",
+      "removed-files-size" : "3186",
+      "changed-partition-count" : "1",
+      "total-records" : "2",
+      "total-files-size" : "3373",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "src/main/resources/warehouse/catalog/demo/orders/metadata/snap-5910391196304167170-1-dfadba30-b2aa-41fb-bdf8-fe6948ff0f20.avro",
+    "schema-id" : 0
+  } ],
+  "statistics" : [ ],
+  "snapshot-log" : [ {
+    "timestamp-ms" : 1733023386745,
+    "snapshot-id" : 7375686592954999898
+  }, {
+    "timestamp-ms" : 1733023392171,
+    "snapshot-id" : 7687205726848296518
+  }, {
+    "timestamp-ms" : 1733023394903,
+    "snapshot-id" : 1559260870369604717
+  }, {
+    "timestamp-ms" : 1733023399425,
+    "snapshot-id" : 5910391196304167170
+  } ],
+  "metadata-log" : [ {
+    "timestamp-ms" : 1733023347101,
+    "metadata-file" : "src/main/resources/warehouse/catalog/demo/orders/metadata/v1.metadata.json"
+  }, {
+    "timestamp-ms" : 1733023386745,
+    "metadata-file" : "src/main/resources/warehouse/catalog/demo/orders/metadata/v2.metadata.json"
+  }, {
+    "timestamp-ms" : 1733023392171,
+    "metadata-file" : "src/main/resources/warehouse/catalog/demo/orders/metadata/v3.metadata.json"
+  }, {
+    "timestamp-ms" : 1733023394903,
+    "metadata-file" : "src/main/resources/warehouse/catalog/demo/orders/metadata/v4.metadata.json"
+  } ]
+}
