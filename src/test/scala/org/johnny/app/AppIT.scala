@@ -3,6 +3,7 @@ package org.johnny.app
 import com.alibaba.fastjson.JSON
 import com.alibaba.fastjson.serializer.SerializeConfig
 import io.github.embeddedkafka.{EmbeddedKafka, EmbeddedKafkaConfig}
+import org.apache.commons.io.FileUtils
 import org.apache.iceberg.Table
 import org.apache.iceberg.spark.Spark3Util
 import org.awaitility.Awaitility.await
@@ -15,6 +16,7 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 import org.slf4j.LoggerFactory
 
+import java.io.File
 import java.util.Date
 import java.util.concurrent.TimeUnit
 
@@ -30,6 +32,7 @@ class AppIT extends AnyFlatSpec with Matchers with EmbeddedKafka with Awaitility
     implicit val userDefinedConfig: EmbeddedKafkaConfig = EmbeddedKafkaConfig(kafkaPort = 9093, zooKeeperPort = 2181)
 
     withRunningKafka {
+      FileUtils.deleteDirectory(new File("src/main/resources/warehouse/catalog/demo"))
       val kafkaReaderConfig = KafkaReaderConfig("localhost:" + userDefinedConfig.kafkaPort)
       val icebergConfig = IcebergConfig()
       val spark = IcebergUtil.initializeSparkSessionByIceberg(icebergConfig)
